@@ -1,10 +1,10 @@
 {
     "name": "Player Config",
     "options": [{
-        "title": "Playback Areas",
+        "title": "Playback Zones",
         "name": "areas",
         "type": "list",
-        "itemname": "Playback Area",
+        "itemname": "Playback Zone",
         "items": [{
             "title": "Name",
             "ui_width": 4,
@@ -75,5 +75,76 @@
             [270, "270°"]
         ],
         "default": 0
-    }]
+    }],
+    "optional": [
+        "example-.*",
+        ".*png$",
+        ".*md$"
+    ],
+    "presets": {
+        "sidebyside": {
+            "desc": "Two side-by-side zones",
+            "config": {
+                "areas": [{
+                    "name": "Left",
+                    "playlist": [{
+                        "asset": "example-half.jpg",
+                        "duration": 5
+                    }],
+                    "x1": 0,
+                    "y1": 0,
+                    "x2": 960,
+                    "y2": 1080 
+                  }, {
+                    "name": "Right",
+                    "playlist": [{
+                        "asset": "example-half.jpg",
+                        "duration": 5
+                    }],
+                    "x1": 960,
+                    "y1": 0,
+                    "x2": 1920,
+                    "y2": 1080 
+                }],
+                "rotation": 0
+            }
+        },
+        "3zone": {
+            "desc": "Three zones for a rotated FullHD display",
+            "config": {
+                "areas": [{
+                    "name": "Top",
+                    "playlist": [{
+                        "asset": "example-zone1.png",
+                        "duration": 5
+                    }],
+                    "x1": 0,
+                    "y1": 0,
+                    "x2": 1080,
+                    "y2": 1490
+                  }, {
+                    "name": "Bottom Left",
+                    "playlist": [{
+                        "asset": "example-zone2.jpg",
+                        "duration": 5
+                    }],
+                    "x1": 0,
+                    "y1": 1500,
+                    "x2": 535,
+                    "y2": 1920
+                  }, {
+                    "name": "Bottom Right",
+                    "playlist": [{
+                        "asset": "example-zone2.jpg",
+                        "duration": 5
+                    }],
+                    "x1": 545,
+                    "y1": 1500,
+                    "x2": 1080,
+                    "y2": 1920
+                }],
+                "rotation": 90
+            }
+        }
+    }
 }
